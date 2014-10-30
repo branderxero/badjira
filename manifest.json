@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "badjira",
+    "description": "visual reminder about the old jira",
+    "version": "0.1.0",
+    "permissions": [
+        "tabs",
+        "<all_urls>",
+        "storage",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [ 
+        { 
+            "all_frames": false, 
+            "js": [ "js/start.js"], 
+            "matches": [ 
+                "*://*.atlassian.net/*"
+            ],
+            "run_at": "document_start" 
+        } 
+    ],
+    "web_accessible_resources": [
+        "js/start.js",
+        "css/darkjira.min.css"
+    ]
+}
